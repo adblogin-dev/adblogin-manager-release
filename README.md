@@ -161,7 +161,7 @@ Khác biệt hoàn toàn với các phần mềm nuôi tài khoản thông thư�
 
 Nếu bạn gặp bất kỳ khó khăn nào trong quá trình cài đặt và sử dụng, vui lòng liên hệ:
 - **GitHub Issues:** [Gửi yêu cầu hỗ trợ / Báo lỗi](https://github.com/cscompany247-rgb/adblogin-manager-release/issues)
-- **Telegram Bot:** [@ADBLogin_Bot](https://t.me/ADBLogin_Bot)
+- **Telegram Bot:** [@ToolsKiemTrieuDo](https://t.me/ToolsKiemTrieuDo) · Channel: [AdbLoginOfficial](https://t.me/AdbLoginOfficial)
 
 ---
 
