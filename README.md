@@ -1,11 +1,11 @@
-# ADBLogin Manager — Professional Anti-Detect Browser & Automation Engine
+# ADBLogin Manager — Professional Multi-Core Browser & Automation Engine
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/cscompany247-rgb/adblogin-manager-release/main/assets/banner.png" alt="ADBLogin Manager" width="800" onerror="this.style.display='none'"/>
 </p>
 
 <p align="center">
-  <b>Next-Generation Anti-Detect Browser Powered by Native C++ Blink-Patched Chromium Core</b><br>
+  <b>Next-Generation Multi-Core Browser Powered by Native C++ Blink-Patched Chromium Core</b><br>
   100% TLS JA3/JA4 Fingerprint Alignment · Bypasses CreepJS, Pixelscan, BrowserLeaks, Cloudflare Turnstile · Ultra-Optimized Performance
 </p>
 
@@ -29,7 +29,7 @@
 
 Unlike tools that rely on JavaScript injection (easy to detect), **ADBLogin Manager** patches Chromium at the native C++ Blink layer:
 
-| Technical Feature | ADBLogin Manager (Native C++) | Conventional Anti-Detect (JS Injection) |
+| Technical Feature | ADBLogin Manager (Native C++) | Conventional Multi-Core (JS Injection) |
 |---|:---:|:---:|
 | **Fingerprint method** | **Native C++ Blink** (compiled into Chromium) | Overrides `navigator` / WebGL via injected JS |
 | **Bot detection bypass** | Strong results on CreepJS, Pixelscan, BrowserLeaks | Often exposed via `toString()` / property descriptors |
@@ -167,7 +167,7 @@ asyncio.run(main())
 
 ### So sánh nhanh
 
-| Đặc tính | ADBLogin Manager (Native C++) | Antidetect JS injection |
+| Đặc tính | ADBLogin Manager (Native C++) | Multi-Core JS injection |
 |---|:---:|:---:|
 | Fingerprint | Patch C++ Blink | JS đè `navigator` / WebGL |
 | CreepJS / Pixelscan | Tối ưu lõi | Dễ lộ descriptor |
