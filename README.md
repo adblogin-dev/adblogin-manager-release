@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <b>Trình duyệt Anti-Detect thế hệ mới với nhân Chromium Patch Native C++ Blink</b><br>
-  Khớp 100% TLS Fingerprint JA3/JA4 · Vượt qua CreepJS, Pixelscan, BrowserLeaks, Cloudflare Turnstile · Tối ưu hiệu năng vượt bậc
+  <b>Next-Generation Anti-Detect Browser Powered by Native C++ Blink-Patched Chromium Core</b><br>
+  100% TLS JA3/JA4 Fingerprint Alignment · Bypasses CreepJS, Pixelscan, BrowserLeaks, Cloudflare Turnstile · Ultra-Optimized Performance
 </p>
 
 <p align="center">
@@ -14,173 +14,181 @@
   <img src="https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20(64--bit)-success" alt="Platform">
   <img src="https://img.shields.io/badge/Engine-Chromium%20Native%20Patched%20C%2B%2B-blueviolet" alt="Chromium Native">
   <img src="https://img.shields.io/badge/Security-Local%20First%20%7C%20Zero%20Telemetry-green" alt="Security">
+  <img src="https://img.shields.io/badge/UI%20Default-English-informational" alt="UI Default English">
 </p>
-
----
-
-## 🌟 1. Điểm Mạnh Vượt Trội Của ADBLogin Manager
-
-Khác biệt hoàn toàn với các phần mềm nuôi tài khoản thông thường dùng JavaScript injection (rất dễ bị phát hiện bởi các hệ thống chống gian lận hiện đại), **ADBLogin Manager** được thiết kế từ cấp độ lõi:
-
-| Đặc tính kỹ thuật | ADBLogin Manager (Native C++) | Trình duyệt Antidetect thông thường (JS Injection) |
-|---|:---:|:---:|
-| **Phương thức can thiệp vân tay** | **Native C++ Blink Level** (Biên dịch trực tiếp vào nhân Chromium) | Chèn JavaScript đè `navigator`, `WebGLRenderingContext` |
-| **Bypass kiểm tra bot nâng cao** | **Đạt điểm tuyệt đối** trên CreepJS, Pixelscan, Incolumitas, BrowserLeaks | Dễ bị lộ thuộc tính sửa đổi (`toString()`, `getOwnPropertyDescriptor`) |
-| **TLS / SSL Fingerprint (JA3 / JA4)** | **Khớp 100%** gói tin mạng của Google Chrome gốc | Thường bị lệch Cipher Suites hoặc Extension Orders |
-| **Tiêu thụ tài nguyên (RAM / CPU)** | **Cực nhẹ**, chạy trực tiếp trên Windows Native, không cần máy ảo | Thường nặng nề, tốn nhiều RAM khi mở đồng thời nhiều profile |
-| **Bảo mật dữ liệu** | **Local-First 100%**: Dữ liệu SQLite, Cookie, Token lưu trên máy khách | Nhiều tool tự ý đồng bộ dữ liệu người dùng lên server bên thứ ba |
-| **Hỗ trợ tự động hóa (Automation)** | Trình điều khiển CDP Native tốc độ cao, hỗ trợ Puppeteer / Playwright | Dễ bị treo hoặc đứt kết nối khi mở số lượng lớn |
-
-### Các Tính Năng Nổi Bật:
-1. **Cách ly phần cứng & Môi trường độc lập hoàn toàn:**
-   - **Canvas & WebGL:** Thuật toán tạo nhiễu noise thông minh, nhất quán trên từng profile mà không làm biến dạng hình ảnh render.
-   - **WebGPU & Hardware Concurrency:** Giả lập trung thực số lõi CPU, bộ nhớ RAM, GPU Vendor và Renderer (NVIDIA, AMD, Intel, Apple Silicon).
-   - **AudioContext & SpeechSynthesis:** Giả lập tần số âm thanh và danh sách giọng đọc hệ thống theo từng hệ điều hành.
-   - **Font Fingerprinting:** Giả lập danh sách font chữ chính xác theo Windows, macOS hoặc Linux.
-   - **WebRTC & Geolocation:** Chặn rò rỉ IP thật (WebRTC Leak Protection), tự động đồng bộ múi giờ (Timezone), ngôn ngữ (Accept-Language) và tọa độ vị trí theo IP Proxy.
-
-2. **Quản lý Proxy Thông Minh:**
-   - Hỗ trợ đầy đủ các giao thức: **HTTP, HTTPS, SOCKS5** (có hoặc không có User/Pass).
-   - **Ưu tiên SOCKS5** khi cần DNS đi qua proxy (giảm rò DNS ISP). HTTP/HTTPS vẫn dùng tốt cho traffic web.
-   - Cơ chế kiểm tra trạng thái Proxy thời gian thực (IP, quốc gia, độ trễ Ping) trước khi mở trình duyệt.
-
-3. **Hệ thống Quản lý Cookie & Tài khoản Tiện Lợi:**
-   - Import / Export Cookie định dạng JSON, Netscape.
-   - Tự động mã hóa mật khẩu và token bằng thuật toán AES-256 an toàn.
-
----
-
-## 🚀 2. Hướng Dẫn Tải Về & Cài Đặt
-
-### Yêu Cầu Hệ Thống
-- **Hệ điều hành:** Windows 10 / Windows 11 (64-bit).
-- **RAM:** Tối thiểu 4 GB (Khuyến nghị 8 GB trở lên nếu chạy nhiều profile cùng lúc).
-- **Ổ cứng:** Tối thiểu 1 GB dung lượng trống.
-
-### Cách 1: Cài bằng Setup Windows (Khuyến nghị)
-1. Mở trang phát hành: 👉 **[Tải bản mới nhất](https://github.com/cscompany247-rgb/adblogin-manager-release/releases/latest)**
-2. Tải ADBLogin_Setup_vX.Y.Z.exe và chạy trình cài đặt.
-3. Hoàn tất wizard (tuỳ chọn shortcut Desktop / khởi động cùng Windows).
-4. Mở **ADBLogin Manager** (ADBLogin.exe).
-5. Dashboard: http://127.0.0.1:8080.
-
-### Cách 2: Cài bản ZIP portable
-1. Tải ADBLogin-Manager-vX.Y.Z-customer-full.zip (hoặc …-Windows-Native.zip).
-2. Giải nén vào thư mục cố định (ví dụ D:\ADBLogin-Manager) — tránh OneDrive/Desktop sync.
-3. Double-click **ADBLogin.exe** (hoặc CAI_TAT_CA.bat).
-4. Dashboard: http://127.0.0.1:8080.
-
-### Cách 3: Cập nhật nhanh 1-Click (Dành cho người dùng đang sử dụng)
-- **Cách A (Trên giao diện Web):** Khi có phiên bản mới, trên Dashboard sẽ xuất hiện thông báo cập nhật -> Bấm **"Cập nhật ngay"** -> **"Khởi động lại & Áp dụng"**.
-- **Cách B (Khay hệ thống Windows Tray):** Chuột phải vào biểu tượng ADBLogin ở góc phải màn hình -> Chọn **"Check for updates..."** (Kiểm tra cập nhật).
-- **Cách C (File Batch 1-Click):** Double-click file **`CAP_NHAT.bat`** (hoặc `UPDATE.bat`) trong thư mục ứng dụng. Script sẽ tự động tải bản vá siêu nhẹ (~15-25MB), sao lưu và cập nhật trong vài giây mà **không làm mất dữ liệu profile hay cấu hình**.
-
-
-
-### Kích hoạt lần đầu
-1. Lần chạy đầu hiện màn hình **Activation**.
-2. Dán license key do nhà cung cấp cấp → **Activate**.
-3. Dữ liệu license / profile lưu tại %USERPROFILE%\.adblogin-manager\ (local, không đồng bộ cloud).
-
-### Dữ liệu lưu ở đâu
-| Mục | Vị trí |
-|-----|--------|
-| Profile, cookie, license, settings | %USERPROFILE%\.adblogin-manager\ |
-| File chương trình | Thư mục cài (cạnh ADBLogin.exe) |
-| Cache cập nhật | %USERPROFILE%\.adblogin-manager\updates\ |
-
----
-
-## 📖 3. Hướng Dẫn Sử Dụng Cơ Bản
-
-### Bước 1: Tạo Profile Trình Duyệt Mới
-1. Bấm vào nút **"Tạo Profile"** (+ New Profile).
-2. Điền tên profile (ví dụ: `Facebook_Acc_01`, `Amazon_Store_02`).
-3. Chọn hệ điều hành giả lập (Windows / macOS / Linux) và phiên bản trình duyệt.
-4. Cấu hình Fingerprint: Hệ thống đã chọn sẵn cấu hình ngẫu nhiên tối ưu nhất. Bạn có thể tùy chỉnh thêm Canvas, WebGL, Audio nếu có nhu cầu chuyên sâu.
-
-### Bước 2: Gắn Proxy Cho Profile
-1. Trong mục **Cấu hình Proxy**, chọn loại proxy (HTTP / HTTPS / SOCKS5).
-2. Nhập theo định dạng: `IP:PORT` hoặc `IP:PORT:USERNAME:PASSWORD`.
-3. Bấm **"Kiểm tra Proxy"** (Check Proxy) để đảm bảo IP hoạt động tốt và nhận diện đúng quốc gia.
-
-### Bước 3: Khởi Chạy Profile
-1. Bấm nút **"Mở Profile"** (Launch).
-2. Trình duyệt chống phát hiện sẽ mở ra với đầy đủ thông số vân tay và IP của proxy đã chọn.
-3. Bạn có thể sử dụng các trang web như [browserleaks.com](https://browserleaks.com), [creepjs](https://abrahamjuliot.github.io/creepjs/) để kiểm tra độ tin cậy của profile.
-
----
-
-## 🛠️ 4. Các Lỗi Thường Gặp & Cách Khắc Phục (Troubleshooting)
-
-### ❓ Lỗi 1: Windows Defender / Antivirus cảnh báo hoặc chặn file `.exe` / `.bat`
-- **Nguyên nhân:** Do phần mềm được biên dịch AOT Native và chưa đăng ký chứng chỉ số đắt tiền của Microsoft (Code Signing Certificate), Windows SmartScreen có thể hiển thị cảnh báo *"Windows protected your PC"*.
-- **Cách xử lý:**
-  1. Khi xuất hiện bảng cảnh báo màu xanh của Windows SmartScreen, bấm **"More info"** -> Bấm **"Run anyway"**.
-  2. Để tránh bị trình diệt virus quét nhầm trong quá trình chạy, hãy thêm thư mục cài đặt ADBLogin Manager vào danh sách loại trừ (**Exclusion**) của Windows Security / Antivirus.
-
-### ❓ Lỗi 2: Proxy báo lỗi không kết nối được hoặc tải trang bị Timeout
-- **Nguyên nhân:** 
-  - Proxy bị die, sai cổng hoặc sai user/password.
-  - Một số proxy IP xoay (Rotating Proxy) có thể mất vài giây để kích hoạt IP mới.
-- **Cách xử lý:**
-  1. Kiểm tra lại định dạng: đảm bảo không có khoảng trắng thừa ở đầu/cuối chuỗi proxy.
-  2. Đổi giao thức thử giữa HTTP và SOCKS5.
-  3. Bấm nút "Kiểm tra Proxy" trong giao diện Profile để xem mã lỗi chi tiết.
-
-### ❓ Lỗi 3: Không mở được trang quản trị `http://127.0.0.1:8080` (Trùng cổng Port 8080)
-- **Nguyên nhân:** Cổng 8080 đang bị một phần mềm khác trên máy bạn chiếm dụng (như phần mềm kế toán, web server cục bộ, Docker).
-- **Cách xử lý:**
-  1. Mở file `.env` trong thư mục cài đặt bằng Notepad.
-  2. Tìm dòng `MB_PORT=8080` và đổi thành cổng khác (ví dụ: `MB_PORT=8090` hoặc `MB_PORT=8888`).
-  3. Bật lại `ADBLogin.exe` và truy cập vào địa chỉ cổng mới.
-
-### ❓ Lỗi 4: Báo lỗi file bị khóa khi cập nhật (File is locked by another process)
-- **Nguyên nhân:** Trình duyệt hoặc tiến trình `ADBLogin.exe` cũ vẫn còn đang chạy ngầm khi cố gắng ghi đè file mới.
-- **Cách xử lý:**
-  1. Double-click file **`CAP_NHAT.bat`**.
-  2. Script đã được tích hợp cơ chế tự động tìm và tắt an toàn tất cả tiến trình liên quan trước khi giải nén đè bản vá.
-  3. Nếu vẫn báo lỗi, hãy mở *Task Manager* (Ctrl+Shift+Esc), tắt các tiến trình `ADBLogin.exe` hoặc `chrome.exe` rồi chạy lại `CAP_NHAT.bat`.
-
-### ❓ Lỗi 5: Làm thế nào để sao lưu (Backup) toàn bộ dữ liệu Profile?
-- Toàn bộ dữ liệu tài khoản, lịch sử duyệt web và cấu hình profile được lưu trữ tại:
-  `%USERPROFILE%\.adblogin-manager\` (thường là `C:\Users\<Tên_Bạn>\.adblogin-manager\`).
-- Để sao lưu sang máy khác hoặc dự phòng, bạn chỉ cần copy nguyên thư mục này lưu trữ an toàn.
-
----
-
-## 🔒 5. Chính Sách Bảo Mật & Quyền Riêng Tư
-
-- **Zero Telemetry:** Ứng dụng không thu thập lịch sử duyệt web, cookie, tài khoản hay hành vi sử dụng của bạn.
-- **Local Storage:** Cơ sở dữ liệu SQLite và khóa mã hóa nằm hoàn toàn trên thiết bị của bạn.
-- **Safe Updates:** Các bản vá cập nhật chỉ chứa file thực thi đã biên dịch và tài nguyên giao diện, được kiểm tra mã băm toàn vẹn **SHA256** trước khi áp dụng.
-
----
-
-## 📞 6. Hỗ Trợ & Liên Hệ
-
-Nếu bạn gặp bất kỳ khó khăn nào trong quá trình cài đặt và sử dụng, vui lòng liên hệ:
-- **GitHub Issues:** [Gửi yêu cầu hỗ trợ / Báo lỗi](https://github.com/cscompany247-rgb/adblogin-manager-release/issues)
-- **Telegram Bot:** [@ToolsKiemTrieuDo](https://t.me/ToolsKiemTrieuDo) · Channel: [AdbLoginOfficial](https://t.me/AdbLoginOfficial)
-
----
 
 <p align="center">
-  <i>ADBLogin Manager — Giải pháp tối thượng cho bảo vệ danh tính số và vận hành tài khoản an toàn.</i>
+  <a href="#-vietnamese--tiếng-việt">Tiếng Việt ↓</a>
 </p>
 
+> **UI language:** ADBLogin Manager defaults to **English**. Switch to Vietnamese anytime with the **EN / VI** toggle in the top bar.
 
 ---
 
-## English Quick Start
+## 1. Key Advantages
 
-1. Download **ADBLogin_Setup_vX.Y.Z.exe** or the portable ZIP from [Releases](https://github.com/cscompany247-rgb/adblogin-manager-release/releases/latest).
-2. Install or extract, then run **ADBLogin.exe**.
-3. Open http://127.0.0.1:8080, paste your license key on the Activation screen.
-4. Create a profile, assign a proxy, click **Launch**.
-5. Update via in-app banner, tray **Check for updates...**, or CAP_NHAT.bat.
-6. Data lives in %USERPROFILE%\.adblogin-manager\ (kept across updates).
+Unlike tools that rely on JavaScript injection (easy to detect), **ADBLogin Manager** patches Chromium at the native C++ Blink layer:
 
-**SmartScreen:** Click *More info* → *Run anyway*. Add the install folder to Windows Security exclusions if AV quarantines files.
+| Technical Feature | ADBLogin Manager (Native C++) | Conventional Anti-Detect (JS Injection) |
+|---|:---:|:---:|
+| **Fingerprint method** | **Native C++ Blink** (compiled into Chromium) | Overrides `navigator` / WebGL via injected JS |
+| **Bot detection bypass** | Strong results on CreepJS, Pixelscan, BrowserLeaks | Often exposed via `toString()` / property descriptors |
+| **TLS JA3 / JA4** | Matches real Chrome network fingerprints | Cipher / extension order often drifts |
+| **RAM / CPU** | Lightweight native Windows process | Heavy when many profiles run |
+| **Privacy** | **Local-first** SQLite, cookies, tokens on your PC | Many tools sync data to third-party clouds |
+| **Automation** | Native CDP + REST API (Playwright / Puppeteer) | Fragile under high concurrency |
 
-**Port busy:** Edit .env → MB_PORT=8090, restart ADBLogin.exe.
+### Highlights
+- **Hardware isolation:** Canvas / WebGL noise, WebGPU, AudioContext, fonts, WebRTC leak protection, timezone & Accept-Language aligned to proxy GeoIP.
+- **Proxy:** HTTP / HTTPS / SOCKS5 (with or without auth). Prefer SOCKS5 when remote DNS is required.
+- **Cookies & accounts:** JSON / Netscape import-export; AES-256 for stored secrets.
+
+---
+
+## 2. Download & Install
+
+### System requirements
+| Item | Requirement |
+|------|-------------|
+| OS | Windows 10 / 11 (64-bit) |
+| RAM | 4 GB min (8 GB+ for many profiles) |
+| Disk | ~1 GB free |
+
+### Method A — Setup installer (recommended)
+1. Open **[Latest Release](https://github.com/cscompany247-rgb/adblogin-manager-release/releases/latest)**
+2. Download `ADBLogin_Setup_vX.Y.Z.exe` and run it
+3. Launch **ADBLogin Manager** (`ADBLogin.exe`)
+4. Dashboard: `http://127.0.0.1:8080` (UI opens in **English** by default)
+
+### Method B — Portable ZIP
+1. Download `ADBLogin-Manager-vX.Y.Z-customer-full.zip` or `…-Windows-Native.zip`
+2. Extract to a fixed folder (e.g. `D:\ADBLogin-Manager`) — avoid OneDrive/Desktop sync
+3. Run `ADBLogin.exe` (or `CAI_TAT_CA.bat` for guided setup)
+
+### Method C — Update an existing install
+| Path | How |
+|------|-----|
+| Web UI | Update banner → **Update Now** → **Restart & Apply** |
+| Tray icon | Right-click → **Check for updates...** |
+| Batch | Run `CAP_NHAT.bat` / `UPDATE.bat` (keeps profile data) |
+
+### First-run activation
+1. Paste your license key on the **Activation** screen → **Activate**
+2. Contact support if needed: [@ToolsKiemTrieuDo](https://t.me/ToolsKiemTrieuDo) · Channel [AdbLoginOfficial](https://t.me/AdbLoginOfficial)
+
+### Where data lives
+| Item | Location |
+|------|----------|
+| Profiles, cookies, license, settings | `%USERPROFILE%\.adblogin-manager\` |
+| App binaries | Install folder (next to `ADBLogin.exe`) |
+| Update cache | `%USERPROFILE%\.adblogin-manager\updates\` |
+
+Reinstall / update does **not** delete `\.adblogin-manager\` unless you remove it on purpose.
+
+---
+
+## 3. Basic usage
+
+1. **New Profile** → name, OS, fingerprint (auto-generated; editable)
+2. Assign proxy (`IP:PORT` or `IP:PORT:USER:PASS`) → **Check Proxy**
+3. **Launch** → verify on CreepJS / Pixelscan / BrowserLeaks / iphey
+
+---
+
+## 4. Automation (CDP / Playwright)
+
+```python
+import asyncio
+import httpx
+from playwright.async_api import async_playwright
+
+MB_BASE_URL = "http://127.0.0.1:8080"
+PROFILE_ID = "your-profile-id"
+
+async def main():
+    async with httpx.AsyncClient() as client:
+        res = await client.post(f"{MB_BASE_URL}/api/profiles/{PROFILE_ID}/launch")
+        cdp_endpoint = res.json()["cdp_endpoint"]
+
+    async with async_playwright() as p:
+        browser = await p.chromium.connect_over_cdp(cdp_endpoint)
+        context = browser.contexts[0]
+        page = context.pages[0] if context.pages else await context.new_page()
+        await page.goto("https://pixelscan.net")
+        print("Page Title:", await page.title())
+        await browser.close()
+
+asyncio.run(main())
+```
+
+| Action | Endpoint |
+|--------|----------|
+| Create profile | `POST /api/profiles` |
+| Launch | `POST /api/profiles/{id}/launch` |
+| Stop | `POST /api/profiles/{id}/stop` |
+| Swagger | `http://127.0.0.1:8080/docs` |
+
+---
+
+## 5. Troubleshooting
+
+| Issue | Fix |
+|-------|-----|
+| SmartScreen / AV blocks EXE | **More info** → **Run anyway**; add install folder to Windows Security exclusions |
+| Proxy timeout | Check format / credentials; try SOCKS5; use **Check Proxy** |
+| Port 8080 busy | In `.env` set `MB_PORT=8090`, restart `ADBLogin.exe` |
+| Update file locked | Run `CAP_NHAT.bat`, or end `ADBLogin.exe` / `chrome.exe` in Task Manager |
+| Backup data | Copy `%USERPROFILE%\.adblogin-manager\` |
+
+---
+
+## 6. Security
+
+- Zero telemetry
+- Local SQLite + encryption keys only on your machine
+- Updates verified with **SHA-256** before apply
+
+---
+
+## 7. Support
+
+- **Issues:** [GitHub Issues](https://github.com/cscompany247-rgb/adblogin-manager-release/issues)
+- **Telegram:** [@ToolsKiemTrieuDo](https://t.me/ToolsKiemTrieuDo) · Channel [AdbLoginOfficial](https://t.me/AdbLoginOfficial)
+
+---
+
+<p align="center"><i>ADBLogin Manager — Local-first identity protection for multi-account operations.</i></p>
+
+---
+
+## 🇻🇳 Vietnamese / Tiếng Việt
+
+> Giao diện mặc định là **English**. Đổi sang tiếng Việt bằng nút **EN / VI** trên thanh trên.
+
+### So sánh nhanh
+
+| Đặc tính | ADBLogin Manager (Native C++) | Antidetect JS injection |
+|---|:---:|:---:|
+| Fingerprint | Patch C++ Blink | JS đè `navigator` / WebGL |
+| CreepJS / Pixelscan | Tối ưu lõi | Dễ lộ descriptor |
+| TLS JA3/JA4 | Khớp Chrome thật | Thường lệch |
+| Dữ liệu | Local `%USERPROFILE%\.adblogin-manager\` | Nhiều tool sync cloud |
+| Automation | CDP + REST API | Dễ đứt khi chạy nhiều |
+
+### Cài đặt nhanh
+1. Tải [Latest Release](https://github.com/cscompany247-rgb/adblogin-manager-release/releases/latest) → `ADBLogin_Setup_vX.Y.Z.exe` hoặc ZIP portable
+2. Chạy `ADBLogin.exe` → mở `http://127.0.0.1:8080`
+3. Dán license key → **Activate**
+4. Tạo profile, gắn proxy, **Launch**
+5. Cập nhật: banner UI / tray / `CAP_NHAT.bat`
+
+### Liên hệ
+- [@ToolsKiemTrieuDo](https://t.me/ToolsKiemTrieuDo) · [AdbLoginOfficial](https://t.me/AdbLoginOfficial)
+- [GitHub Issues](https://github.com/cscompany247-rgb/adblogin-manager-release/issues)
+
+### Xử lý lỗi thường gặp
+| Lỗi | Cách xử lý |
+|-----|------------|
+| SmartScreen | More info → Run anyway; thêm thư mục cài vào Exclusion |
+| Port 8080 bận | `.env` → `MB_PORT=8090`, restart |
+| Cập nhật bị khóa file | `CAP_NHAT.bat` hoặc tắt `ADBLogin.exe` / `chrome.exe` |
